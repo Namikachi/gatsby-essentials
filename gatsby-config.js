@@ -12,7 +12,7 @@ module.exports = {
     lang: `ja`,
     siteUrl: `https://fervent-fermat-4c32cd.netlify.app/`,
     locale: `ja_JP`,
-    fbappid: `XXXXXXXXXX`
+    fbappid: `XXXXXXXXXX`,
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -21,8 +21,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`
-      }
+        path: `${__dirname}/src/images/`,
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -33,9 +33,17 @@ module.exports = {
         start_url: `/`,
         background_color: `#477294`,
         display: `standalone`,
-        icon: `src/images/icon.png`
-      }
+        icon: `src/images/icon.png`,
+      },
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOST
+      }
+    }
   ],
 }

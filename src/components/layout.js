@@ -12,7 +12,7 @@ config.autoAddCss = false
 export default ({ children }) => (
   <div>
     <Header />
-      {children}
+    {children}
     <Footer />
   </div>
 )
