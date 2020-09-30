@@ -83,11 +83,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             catid: node.id,
             catname: node.category,
             catslug: node.categorySlug,
-            skip: catPostsPerPage*i,
+            skip: catPostsPerPage * i,
             limit: catPostsPerPage,
-            currentPage: i+1,
-            isFirst: i+1 === 1,
-            isLast: i+1 === catPages,
+            currentPage: i + 1,
+            isFirst: i + 1 === 1,
+            isLast: i + 1 === catPages,
           }
         })
       })
